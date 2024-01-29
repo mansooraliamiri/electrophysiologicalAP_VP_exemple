@@ -60,10 +60,20 @@ plt.figure(figsize=(12, 10))
 
 # Plot for Membrane Potential
 plt.subplot(3, 1, 1)  # 2 rows, 1 column, 1st subplot
+#plt.plot(time_ms, membrane_potential_mV, marker='o', color='blue')
+#plt.axhline(y=-55, color='r', linestyle='--', label='Threshold Potential (-55 mV)')
+#plt.axhline(y=-70, color='g', linestyle='--', label='Resting Potential (-70 mV)')
+#plt.title('Membrane Potential Changes Over Time')
+#plt.xlabel('Time (ms)')
+#plt.ylabel('Membrane Potential (mV)')
+
 plt.plot(time_ms, membrane_potential_mV, marker='o', color='blue')
-plt.title('Membrane Potential Changes Over Time')
+plt.title('Membrane Potential Changes Over Time in Response to Stress')
 plt.xlabel('Time (ms)')
 plt.ylabel('Membrane Potential (mV)')
+plt.axhline(y=-55, color='r', linestyle='--', label='Threshold Potential (-55 mV)')
+plt.axhline(y=-70, color='g', linestyle='--', label='Resting Potential (-70 mV)')
+plt.legend()
 plt.grid(True)
 
 # Plot for dV/dt
