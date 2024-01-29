@@ -30,6 +30,12 @@ def external_current(t):
 
 # Membrane capacitance (hypothetical value)
 Cm = 1e-6  # Farads (F)
+'''
+data = {
+    "Time (ms)": [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+    "Membrane Potential (mV)": [-70, -60, -55, 30, -55, -60, -65, -70, -70, -70, -70]
+}
+'''
 
 # Time and membrane potential for demonstration
 time_ms = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
