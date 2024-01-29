@@ -72,7 +72,38 @@ plt.subplot(3, 1, 1)  # 2 rows, 1 column, 1st subplot
 #plt.title('Membrane Potential Changes Over Time')
 #plt.xlabel('Time (ms)')
 #plt.ylabel('Membrane Potential (mV)')
+##################
+# Assume different values for membrane capacitance (Cm)
+#Cm_values = [1e-6, 5e-6, 1e-5]  # Farads (F), different hypothetical values
 
+# Prepare to store dV/dt calculations for each Cm value
+#dV_dt_by_Cm = {}
+
+# Calculate dV/dt for each Cm value
+#for Cm in Cm_values:
+#    dV_dt_temp = []
+#    for V in membrane_potential_V[:-1]:  # Exclude the last value for calculation
+#        I_ion = sodium_current(V) + potassium_current(V) + leak_current(V)
+#        I_ext = external_current(time_ms[0])  # Assuming a constant external current for simplicity
+#        current_total = -I_ion + I_ext
+#        dV_dt_temp.append(current_total / Cm)
+#    dV_dt_by_Cm[Cm] = dV_dt_temp
+
+# Plotting the dV/dt graph for different Cm values
+#plt.figure(figsize=(12, 6))
+
+#for Cm, dV_dt_values in dV_dt_by_Cm.items():
+#    plt.plot(time_ms[:-1], dV_dt_values, marker='o', label=f'Cm = {Cm} F')
+
+#plt.title('Rate of Change of Membrane Potential (dV/dt) for Different Membrane Capacitances (Cm)')
+#plt.xlabel('Time (ms)')
+#plt.ylabel('dV/dt (V/s)')
+#plt.legend()
+#plt.grid(True)
+
+
+
+####################
 plt.plot(time_ms, membrane_potential_mV, marker='o', color='blue')
 plt.title('Membrane Potential Changes Over Time in Response to Stress')
 plt.xlabel('Time (ms)')
@@ -85,7 +116,7 @@ plt.grid(True)
 # Plot for dV/dt
 plt.subplot(3, 1, 2)  # 2 rows, 1 column, 2nd subplot
 plt.plot(time_ms[:-1], dV_dt, marker='o', color='orange')  # Exclude the last time point
-plt.title('Rate of Change of Membrane Potential Over Time (dV/dt)')
+plt.title(f'Rate of Change of Membrane Potential Over Time (dV/dt) with Cm = {Cm} F')
 plt.xlabel('Time (ms)')
 plt.ylabel('dV/dt (V/s)')
 plt.grid(True)
